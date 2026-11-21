@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { notFound } from "./middlewares/notFound.js";
+import adminRoutes from "./routes/admin.routes.js";
 import equipmentRoutes from "./routes/equipment.routes.js";
 import statsRoutes from "./routes/stats.routes.js";
 import usersRoutes from "./routes/users.routes.js";
@@ -32,6 +33,7 @@ app.get("/api/health", (req, res) => {
 
 app.use("/api/users", usersRoutes);
 app.use("/api/equipment", equipmentRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api/stats", statsRoutes);
 
 app.use(notFound);
