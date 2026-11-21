@@ -1,0 +1,15 @@
+# env files (values never committed)
+.env*
+!.env.example
+
+# dependencies
+node_modules/
+
+# vercel
+.vercel
+
+# logs
+*.log
+
+# OS
+.DS_Store
