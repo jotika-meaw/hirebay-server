@@ -3,6 +3,7 @@ import express from "express";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { notFound } from "./middlewares/notFound.js";
 import adminRoutes from "./routes/admin.routes.js";
+import bookingsRoutes from "./routes/bookings.routes.js";
 import equipmentRoutes from "./routes/equipment.routes.js";
 import favoritesRoutes from "./routes/favorites.routes.js";
 import statsRoutes from "./routes/stats.routes.js";
@@ -35,6 +36,7 @@ app.get("/api/health", (req, res) => {
 app.use("/api/users", usersRoutes);
 app.use("/api/equipment", equipmentRoutes);
 app.use("/api/favorites", favoritesRoutes);
+app.use("/api/bookings", bookingsRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/stats", statsRoutes);
 
