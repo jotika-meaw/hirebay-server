@@ -76,6 +76,9 @@ export async function createBooking(req, res, next) {
     }
 
     const days = wholeDays(start, end);
+    if (days > 365) {
+      return res.status(400).json({ message: "Rentals can be at most 365 days" });
+    }
     const units = billableUnits(days, equipment.rentalType);
     const totalAmount = units * equipment.price * qty;
 
