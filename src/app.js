@@ -3,6 +3,7 @@ import express from "express";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { notFound } from "./middlewares/notFound.js";
 import adminRoutes from "./routes/admin.routes.js";
+import analyticsRoutes from "./routes/analytics.routes.js";
 import bookingsRoutes from "./routes/bookings.routes.js";
 import cronRoutes from "./routes/cron.routes.js";
 import equipmentRoutes from "./routes/equipment.routes.js";
@@ -43,6 +44,7 @@ app.use("/api/favorites", favoritesRoutes);
 app.use("/api/bookings", bookingsRoutes);
 app.use("/api/payments", paymentsRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/analytics", analyticsRoutes);
 app.use("/api/stats", statsRoutes);
 app.use("/api/cron", cronRoutes);
 
