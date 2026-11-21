@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { notFound } from "./middlewares/notFound.js";
+import usersRoutes from "./routes/users.routes.js";
 
 const app = express();
 
@@ -26,6 +27,8 @@ app.use(express.json({ limit: "1mb" }));
 app.get("/api/health", (req, res) => {
   res.json({ ok: true });
 });
+
+app.use("/api/users", usersRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
