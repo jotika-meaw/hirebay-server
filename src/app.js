@@ -4,6 +4,7 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 import { notFound } from "./middlewares/notFound.js";
 import adminRoutes from "./routes/admin.routes.js";
 import bookingsRoutes from "./routes/bookings.routes.js";
+import cronRoutes from "./routes/cron.routes.js";
 import equipmentRoutes from "./routes/equipment.routes.js";
 import favoritesRoutes from "./routes/favorites.routes.js";
 import paymentsRoutes from "./routes/payments.routes.js";
@@ -43,6 +44,7 @@ app.use("/api/bookings", bookingsRoutes);
 app.use("/api/payments", paymentsRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/stats", statsRoutes);
+app.use("/api/cron", cronRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
